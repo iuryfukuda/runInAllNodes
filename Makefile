@@ -9,7 +9,7 @@ setup-cache:
 	./createCache $(sshuser) $(identity) $(pubkey) $(port)
 
 run: kubectl-ssh-jump
-	./main.sh
+	./main.sh $(cmd)
 
 clean-%:
 	rm -f *.${*}
