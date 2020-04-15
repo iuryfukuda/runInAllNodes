@@ -33,9 +33,6 @@ done
 USERNAME=${username:-$DEFAULT_USERNAME}
 PUBKEY=${pubkey:-$DEFAULT_PUBKEY}
 
-echo $USERNAME $PUBKEY
-
-exit
 
 [ -f $PUBKEY ] || err "not found "$PUBKEY
 
