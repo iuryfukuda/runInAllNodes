@@ -24,4 +24,4 @@ stop:
 	@kill $(shell cat *.pid) 
 
 runFixAllNodeAuth:
-	./updateAllNodeAuth -u $(sshuser) -p $(pubkey)
+	./updateAllNodeAuth.sh -u $(sshuser) -p $(pubkey)
