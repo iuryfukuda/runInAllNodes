@@ -3,7 +3,7 @@ pubkey ?= ""
 privkey ?= ""
 port ?= "22"
 cmd ?= "sudo tcpdump -s256"
-sshjumpversion ?= 0.3.0
+sshjumpversion ?= 0.3.1
 
 setup-cache:
 	./createCache $(sshuser) $(identity) $(pubkey) $(port)
