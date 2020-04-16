@@ -28,7 +28,7 @@ esac
 
 cmd=${@-""}
 
-[ -z $cmd ] && err "cmd not setted"
+[ -z "$cmd" ] && err "cmd not setted"
 
 allNodes=$(kubectl get nodes | awk '{ print $1 }' | grep -v '^NAME$')
 
@@ -38,7 +38,7 @@ do
   pid=$!
   echo $pid > $node.pid
   ## must sure the process is loaded before start next
-  while ! grep -q $cmd $node.log
+  while ! grep -q "$cmd" $node.log
   do
     sleep 3
   done
