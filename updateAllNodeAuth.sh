@@ -40,12 +40,12 @@ allNodes=$(kubectl get nodes | awk '{ print $1 }' | grep -v '^NAME$')
 allResourcesJSON=$(mktemp)
 az resource list > $allResourcesJSON
 
-for node in $allNodes
+for nodeName in $allNodes
 do
-    resource=$(jq -r  '.[]| select(.name=="'$node'") | .resourceGroup' $allResourcesJSON)
+    resource=$(jq -r  '.[]| select(.name=="'$nodeName'") | .resourceGroup' $allResourcesJSON)
     cmd="az vm user update
        --resource-group $resource
-       --name $node
+       --name $nodeName
        --username $username 
        --ssh-key-value $pubkey"
     echo $cmd
